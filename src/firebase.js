@@ -1,14 +1,7 @@
 import { initializeApp } from "firebase/app";
-import {
-  getAuth,
-  GoogleAuthProvider,
-  signInWithPopup,
-  sendPasswordResetEmail,
-  createUserWithEmailAndPassword,
-  sendEmailVerification,
-  signInWithEmailAndPassword
-} from "firebase/auth";
+import { getAuth, GoogleAuthProvider, signInWithPopup, sendPasswordResetEmail, createUserWithEmailAndPassword, sendEmailVerification, signInWithEmailAndPassword } from "firebase/auth";
 
+// Your Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyAzBNj20JCE39AUvRXWoV5VlgNaiL-o_94",
   authDomain: "sendora-9e14f.firebaseapp.com",
@@ -20,6 +13,7 @@ const firebaseConfig = {
   measurementId: "G-HEYHYSGKBL"
 };
 
+// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();

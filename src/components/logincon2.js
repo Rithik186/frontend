@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./Logincon.css"; // Import CSS file
-import { useNavigate } from "react-router-dom";
 import {
   auth,
   provider,
@@ -22,10 +21,6 @@ const Logincon = () => {
   const [view, setView] = useState("login"); // 'login' or 'signup'
   const [showPassword, setShowPassword] = useState(false);
 
-
-  
-  const navigate = useNavigate(); // Hook for navigation
-
   // Toggle password visibility
   const togglePasswordVisibility = () => setShowPassword(!showPassword);
 
@@ -34,7 +29,6 @@ const Logincon = () => {
     try {
       await signInWithPopup(auth, provider);
       toast.success("Login Successful!");
-      navigate("/Home");
     } catch (error) {
       toast.error(error.message);
     }
@@ -42,15 +36,10 @@ const Logincon = () => {
 
   // Login with Email & Password
   const handleLogin = async () => {
-    if(!email || !password){
-      toast.error("Email and Password are required!");
-      return;
-    }
-    try{
+    try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       if (userCredential.user.emailVerified) {
         toast.success("Login Successful!");
-        navigate("/Home");
       } else {
         toast.warning("Please verify your email before logging in.");
       }
@@ -61,11 +50,7 @@ const Logincon = () => {
 
   // Password Reset Function
   const handleForgotPassword = async () => {
-    if (!email){
-      toast.error("Please enter your email first.");
-      return;
-    }
-    try{
+    try {
       await sendPasswordResetEmail(auth, email);
       toast.success("Password reset link sent to your email.");
     } catch (error) {
@@ -75,11 +60,6 @@ const Logincon = () => {
 
   // Email Registration with Verification
   const handleRegister = async () => {
-
-    if (!email || !password || !confirmPassword || !name || !aadhar) {
-      toast.error("All fields are required!");
-      return;
-    }
     if (password !== confirmPassword) {
       toast.error("Passwords do not match!");
       return;
@@ -105,7 +85,7 @@ const Logincon = () => {
       {/* Left Side - Video Background */}
       <div className="login-left">
         <video autoPlay loop muted className="login-video">
-          <source src="right.mp4" type="video/mp4" />
+          <source src="left.mp4" type="video/mp4" />
         </video>
         <div className="overlay"></div>
         <div className="content">

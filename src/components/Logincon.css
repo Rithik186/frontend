@@ -181,3 +181,19 @@ html,body{
     text-decoration: none;
   }
   
+  .login-right {
+    transition: transform 0.5s ease-in-out;
+  }
+  .slide-left {
+    transform: translateX(-100%);
+  }
+  .password-container {
+    position: relative;
+  }
+  .eye-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }

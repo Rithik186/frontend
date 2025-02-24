@@ -99,10 +99,8 @@
   
  .input-field:hover{
   background-color: aliceblue;
-  transition: transform 0.3s ease-in-out;
-  transform: scale(1.1);
+  
  }
-
 
   .login-button {
     width: 100%;
@@ -190,4 +188,49 @@
     color: blue;
     text-decoration: none;
   }
-  
+
+  .login-right {
+  transition: transform 0.5s ease-in-out;
+}
+.slide-left {
+  transform: translateX(-100%);
+}
+.password-container {
+  position: relative;
+}
+.eye-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.register-btn{
+  color: whitesmoke;
+  font-weight: bold;
+  background-color: #bd9aff;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-left: 120px;
+  margin-top: 10px;
+}
+
+.register-btn:hover{
+   background-color: #8441ff;
+}
+
+.switch-text{
+      color: black;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      margin-top: 12px;
+      margin-left: 40px;
+}
+
+.switch-text:hover{
+  transform: scale(1.1);
+  color: black;
+}
+
