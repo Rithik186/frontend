@@ -1,108 +1,106 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
-
-:root {
-  --primary-color: #fff5bc;
-  --secondary-color: #ff7b00;
-  --text-light: #ffffff;
-  --text-muted: #c5c5c5;
-}
-
-* {
+/* General Page Styling */
+body, html {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
+  overflow-x: hidden;
 }
 
-.homepage {
-  background-color: var(--primary-color);
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo {
   font-size: 24px;
   font-weight: bold;
-  color: var(--secondary-color);
 }
 
-.nav-links {
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: var(--text-light);
-  font-size: 18px;
-  transition: 0.3s;
-}
-
-.nav-links a:hover {
-  color: var(--secondary-color);
-}
-
+/* Menu Button */
 .menu-button {
-  position: relative;
-  background: var(--secondary-color);
-  padding: 10px 20px;
-  border-radius: 20px;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 30px;
   cursor: pointer;
-  overflow: hidden;
-  transition: transform 0.3s ease-in-out;
-  transform: translateX(50px);
-  opacity: 0;
+  transition: transform 0.3s ease;
 }
 
-.menu-button.open {
-  transform: translateX(0);
-  opacity: 1;
+.menu-button:hover {
+  transform: scale(1.1);
 }
 
-.hero-section {
+/* Main Content */
+.main-content {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  height: 100vh;
   flex-direction: column;
+  position: relative;
+}
+
+/* 3D Model Viewer */
+.bg-model {
+  width: 400px;
+  height: 400px;
+}
+
+/* Centered Text */
+.center-text {
   text-align: center;
-  height: 80vh;
+  position: absolute;
+  bottom: 100px;
 }
 
-.text-content {
-  max-width: 600px;
-  color: var(--text-light);
-  margin-bottom: 20px;
-}
-
-.text-content h2 {
-  font-size: 18px;
-  color: var(--secondary-color);
-  font-weight: 600;
-}
-
-.text-content h1 {
-  font-size: 48px;
+.center-text h2 {
+  font-size: 32px;
   font-weight: bold;
 }
 
-.text-content p {
-  font-size: 16px;
-  color: var(--text-muted);
+.center-text p {
+  font-size: 18px;
+  color: #666;
 }
 
-.hero-model {
-  width: 600px;
-  height: 600px;
+/* Side Menu */
+.side-menu {
+  position: fixed;
+  right: -200px;
+  top: 0;
+  width: 200px;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  transition: right 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
+}
+
+.side-menu.open {
+  right: 0;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-menu ul li {
+  padding: 15px 20px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.side-menu ul li:hover {
+  background: rgba(255, 255, 255, 0.2);
 }
